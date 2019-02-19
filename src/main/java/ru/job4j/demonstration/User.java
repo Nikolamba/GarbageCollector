@@ -42,6 +42,6 @@ public class User {
     @Override
     protected void finalize() throws Throwable {
         super.finalize();
-        //System.out.println("finalize object");
+        System.out.print("finalize object, ");
     }
 }

@@ -14,11 +14,11 @@ public class StartApp {
     public static void main(String[] args) {
         long startTime = new GregorianCalendar().getTimeInMillis();
         StartApp start = new StartApp();
-        for (int j = 0; j < 20; j++) {
+        for (int j = 0; j < 50; j++) {
            start.testMethod();
         }
         long finishTime = new GregorianCalendar().getTimeInMillis();
-        System.out.println("Working time: " + (finishTime - startTime) + " ms");
+        System.out.println(System.lineSeparator() + "Working time: " + (finishTime - startTime) + " ms");
     }
 
     public void testMethod() {
@@ -27,6 +27,11 @@ public class StartApp {
             users.add(new User());
         }
         info();
+        try {
+            Thread.sleep(50);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public void info() {
@@ -34,6 +39,6 @@ public class StartApp {
         Runtime runtime = Runtime.getRuntime();
 //        System.out.println("Used memory: " + (runtime.totalMemory() - runtime.freeMemory()) / kb);
 //        System.out.println("Total memory: " + runtime.totalMemory() / kb);
-        System.out.println("Free memory: " + runtime.freeMemory() / kb);
+        System.out.println(System.lineSeparator() + "Free memory: " + runtime.freeMemory() / kb);
     }
 }
