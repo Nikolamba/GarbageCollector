@@ -15,7 +15,9 @@ public class StartApp {
         do {
             System.out.println("Enter file name or 'exit': ");
             line = scanner.nextLine();
-            System.out.println(cache.getSource(line));
+            if (!line.equalsIgnoreCase("exit")) {
+                System.out.println(cache.getSource(line));
+            }
         } while (!line.equalsIgnoreCase("exit"));
     }
 }

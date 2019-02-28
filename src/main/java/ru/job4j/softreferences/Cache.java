@@ -34,7 +34,7 @@ public class Cache {
                 stringBuilder.append(System.lineSeparator());
             }
         } catch (IOException e) {
-            return "File not found or input/output error";
+            e.printStackTrace();
         }
         return stringBuilder.toString();
     }
